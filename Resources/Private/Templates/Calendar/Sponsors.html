@@ -1,0 +1,17 @@
+<html xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" flux:schemaLocation="https://fluidtypo3.org/schemas/flux-master.xsd" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	  v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
+
+<f:variable name="imageSettings" value="{ratio: 'ratio-4x3', lazy: '1'}"/>
+<v:variable.set name="sponsors" value="{sponsors -> v:iterator.extract(key: 'entity')}"/>
+<v:variable.set name="sponsors" value="{sponsors -> v:iterator.sort(sortFlags: 'SORT_NATURAL',sortBy: 'companyTitle')}"/>
+<div class="adventcalendar adventcalendar-sponsors">
+	<h2  class="padding-vertical-large text-center">Sponsoren {calendar.name}</h2>
+	<div class="grid-x grid-margin-x grid-margin-y small-up-2 medium-up-3 large-up-4">
+		<f:for each="{sponsors}" as="sponsor">
+			<div class="cell color-white">
+				<f:render partial="Sponsor" arguments="{entity:sponsor}"/>
+			</div>
+		</f:for>
+	</div>
+</div>
+</html>

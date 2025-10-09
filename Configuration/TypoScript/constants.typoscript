@@ -1,0 +1,16 @@
+plugin.tx_adventcalendar {
+
+	settings {
+	}
+
+	view {
+		# cat=adventcalendar/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:adventcalendar/Resources/Private/Templates/
+
+		# cat=adventcalendar/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:adventcalendar/Resources/Private/Partials/
+
+		# cat=adventcalendar/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:adventcalendar/Resources/Private/Layouts/
+	}
+}

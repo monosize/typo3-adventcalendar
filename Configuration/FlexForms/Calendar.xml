@@ -1,0 +1,125 @@
+<T3DataStructure>
+    <meta>
+        <langChildren>0</langChildren>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <main>
+            <ROOT>
+                <sheetTitle>LLL:EXT:adventcalendar/Resources/Private/Language/locallang.xlf:mainConfiguration</sheetTitle>
+                <type>array</type>
+                <el>
+
+                    <!-- Controller Actions -->
+                    <switchableControllerActions>
+                        <label>LLL:EXT:adventcalendar/Resources/Private/Language/locallang.xlf:mode</label>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <item>
+                                    <label>Calendar with List</label>
+                                    <value>Calendar->calendar;Calendar->list</value>
+                                </item>
+                                <item>
+                                    <label>List Only</label>
+                                    <value>Calendar->list</value>
+                                </item>
+                                <item>
+                                    <label>Sponsors</label>
+                                    <value>Calendar->sponsors</value>
+                                </item>
+                                <item>
+                                    <label>Category View</label>
+                                    <value>Calendar->category</value>
+                                </item>
+                            </items>
+                        </config>
+                    </switchableControllerActions>
+
+                    <!-- Calendar Selection -->
+                    <settings.calendar>
+                        <label>LLL:EXT:adventcalendar/Resources/Private/Language/locallang.xlf:calendarUid</label>
+                        <displayCond>FIELD:switchableControllerActions:!=:Calendar->sponsors</displayCond>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <foreign_table>tx_adventcalendar_domain_model_calendar</foreign_table>
+                            <foreign_table_where>ORDER BY tx_adventcalendar_domain_model_calendar.name</foreign_table_where>
+                            <size>1</size>
+                            <minitems>0</minitems>
+                            <maxitems>1</maxitems>
+                            <items>
+                                <item>
+                                    <label></label>
+                                    <value>0</value>
+                                </item>
+                            </items>
+                        </config>
+                    </settings.calendar>
+
+                    <!-- Template Selection -->
+                    <settings.template>
+                        <label>Template</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <item>
+                                    <label>Default</label>
+                                    <value>default</value>
+                                </item>
+                                <item>
+                                    <label>Grid</label>
+                                    <value>grid</value>
+                                </item>
+                                <item>
+                                    <label>Compact</label>
+                                    <value>compact</value>
+                                </item>
+                            </items>
+                        </config>
+                    </settings.template>
+
+                    <!-- Limit for List View -->
+                    <settings.limit>
+                        <label>Limit</label>
+                        <displayCond>FIELD:switchableControllerActions:=:Calendar->list</displayCond>
+                        <config>
+                            <type>number</type>
+                            <size>5</size>
+                            <default>10</default>
+                            <range>
+                                <lower>1</lower>
+                                <upper>100</upper>
+                            </range>
+                        </config>
+                    </settings.limit>
+
+                    <!-- Category for Category View -->
+                    <settings.category>
+                        <label>Category</label>
+                        <displayCond>FIELD:switchableControllerActions:=:Calendar->category</displayCond>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <foreign_table>sys_category</foreign_table>
+                            <foreign_table_where>ORDER BY sys_category.title</foreign_table_where>
+                            <size>1</size>
+                            <minitems>0</minitems>
+                            <maxitems>1</maxitems>
+                            <items>
+                                <item>
+                                    <label>All Categories</label>
+                                    <value>0</value>
+                                </item>
+                            </items>
+                        </config>
+                    </settings.category>
+
+                </el>
+            </ROOT>
+        </main>
+    </sheets>
+</T3DataStructure>

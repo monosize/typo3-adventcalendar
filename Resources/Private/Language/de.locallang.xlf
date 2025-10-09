@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-06-09T08:09:56Z">
+		<header>
+			<type>database</type>
+			<description>Language file for EXT:adventcalendar</description>
+		</header>
+		<body>
+			<trans-unit id="plugin.Calendar">
+				<target>Adventskalendar</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.logo">
+				<target>Logo</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.winning_prizes">
+				<target>Gewinne</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.winning_number">
+				<target>Gewinnnummer</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.calendar">
+				<target>Kalender</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.day">
+				<target>Tag</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.sponsor">
+				<target>Sponsor</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.image">
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.year">
+				<target>Jahr</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.name">
+				<target>Kalender Name</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize">
+				<target><![CDATA[Gewinn für Adventskalender]]></target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.name">
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar">
+				<target><![CDATA[Adventskalender]]></target>
+			</trans-unit>
+			<trans-unit id="mode">
+				<target><![CDATA[Modus]]></target>
+			</trans-unit>
+			<trans-unit id="mode.calendarList">
+				<target><![CDATA[Zeige Adventskalender mit Gewinnen]]></target>
+			</trans-unit>
+			<trans-unit id="mode.list">
+				<target><![CDATA[Liste der Gewinne]]></target>
+			</trans-unit>
+			<trans-unit id="mode.sponsors">
+				<target><![CDATA[Liste der Sponsoren]]></target>
+			</trans-unit>
+			<trans-unit id="mode.category">
+				<target><![CDATA[Liste der Adressen über Kategorie]]></target>
+			</trans-unit>
+			<trans-unit id="calendar">
+				<target><![CDATA[Adventskalender]]></target>
+			</trans-unit>
+			<trans-unit id="mainConfiguration">
+				<target><![CDATA[Konfiguration]]></target>
+			</trans-unit>
+			
+			<!-- Missing translations added -->
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.sponsors">
+				<target>Sponsoren</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_prize">
+				<target><![CDATA[Preis für Adventskalender]]></target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_prize.name">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_prize.sponsor">
+				<target>Sponsor</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_prize.winning_number">
+				<target>Gewinnnummer</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor">
+				<target><![CDATA[Sponsor für Adventskalender]]></target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.calendar">
+				<target>Kalender</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.day">
+				<target>Tag</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.entity">
+				<target>Entität</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.prizes">
+				<target>Preise</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.winning_prizes">
+				<target>Gewinnpreise</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor">
+				<target><![CDATA[Gewinnsponsor für Adventskalender]]></target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor.calendar">
+				<target>Kalender</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor.day">
+				<target>Tag</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor.entity">
+				<target>Entität</target>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor.winning_prizes">
+				<target>Gewinnpreise</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

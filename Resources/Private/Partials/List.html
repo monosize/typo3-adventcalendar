@@ -1,0 +1,61 @@
+<html xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" flux:schemaLocation="https://fluidtypo3.org/schemas/flux-master.xsd" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+			v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
+
+<f:if condition="prizes">
+	<table>
+		<thead>
+		<th>Gewinn-Nummer</th>
+		<th style="width: 66%">Gewinn</th>
+		<th style="width: 33%">Sponsor</th>
+		</thead>
+		<tbody>
+		<f:for each="{prizes}" as="prize">
+			<tr>
+				<td>{prize.winningNumber -> f:format.number(decimals:0,thousandsSeparator:'')}</td>
+				<td>{prize.name}</td>
+				<td><a data-open="sponsor_{prize.sponsor.uid}">{prize.sponsor.entity.companyTitle}</a></td>
+			</tr>
+		</f:for>
+		</tbody>
+	</table>
+	<v:variable.set name="used" value="{0:0}"/>
+	<f:for each="{prizes}" as="prize">
+		<f:if condition="{used.n{prize.sponsor.uid}}">
+			<f:else>
+				<f:alias map="{entity: prize.sponsor.entity}">
+					<div class="reveal" id="sponsor_{prize.sponsor.uid}" data-reveal>
+						<h3>{entity.companyTitle}</h3>
+						<p>
+							{entity.street}
+							<br>
+							{entity.zip} {entity.city}<br>
+						<f:if condition="{entity.phone} || {entity.fax}">
+								<f:if condition="{entity.phone}">
+									Telefon: {entity.phone}<br>
+								</f:if>
+								<f:if condition="{entity.fax}">
+									Telefax: {entity.fax}<br>
+								</f:if>
+						</f:if>
+						</p>
+						<f:if condition="{entity.email} || {entity.www}">
+							<p>
+								<f:if condition="{entity.email}">
+									<f:link.email email="{entity.email}">{entity.email}</f:link.email>
+								</f:if>
+								<f:if condition="{entity.www}">
+									<f:link.typolink parameter="{entity.www}">Homepage</f:link.typolink>
+								</f:if>
+							</p>
+						</f:if>
+						<button class="close-button" data-close aria-label="Close modal" type="button">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</f:alias>
+				<v:variable.set name="used.n{prize.sponsor.uid}" value="1"/>
+			</f:else>
+		</f:if>
+	</f:for>
+</f:if>
+</html>

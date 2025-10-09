@@ -1,0 +1,16 @@
+<html xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" flux:schemaLocation="https://fluidtypo3.org/schemas/flux-master.xsd" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	  v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
+
+<f:variable name="imageSettings" value="{ratio: 'ratio-4x3', lazy: '1'}"/>
+<f:if condition="{actDay} == 0">
+	<f:then>
+		<h2>Wer will denn da mogeln?</h2>
+	</f:then>
+	<f:else>
+		<f:if condition="{actDay}">
+			<h2 class="padding-vertical-large text-center">Gewinne für Dezember {calendar.year}</h2>
+			<f:render partial="List" arguments="{_all}"/>
+		</f:if>
+	</f:else>
+</f:if>
+</html>

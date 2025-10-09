@@ -1,0 +1,50 @@
+plugin.tx_adventcalendar {
+	settings {
+	}
+
+	mvc.callDefaultActionIfActionCantBeResolved = 1
+
+	view {
+		templateRootPaths {
+			0 = EXT:adventcalendar/Resources/Private/Templates/
+			1 = {$plugin.tx_adventcalendar.view.templateRootPath}
+
+		}
+
+		partialRootPaths {
+			0 = EXT:adventcalendar/Resources/Private/Partials/
+			1 = {$plugin.tx_adventcalendar.view.partialRootPath}
+			10 = {$plugin.tx_fluidcontentelements.view.partialRootPaths.default}
+		}
+
+		layoutRootPaths {
+			0 = EXT:adventcalendar/Resources/Private/Layouts/
+			1 = {$plugin.tx_adventcalendar.view.layoutRootPath}
+			10 = {$plugin.tx_fluidcontentelements.view.layoutRootPaths.default}
+		}
+	}
+
+	features {
+		skipDefaultArguments = 1
+	}
+}
+
+plugin.tx_adventcalendar {
+
+	persistence {
+		storagePid = {$plugin.tx_adventcalendar.persistence.storagePid}
+		classes {
+			Monosize\Adventcalendar\Domain\Model\News {
+				mapping {
+					tableName = tx_news_domain_model_news
+				}
+			}
+		}
+	}
+
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+
+}

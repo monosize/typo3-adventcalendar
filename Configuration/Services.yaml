@@ -1,0 +1,25 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  # Controllers
+  Monosize\Adventcalendar\Controller\:
+    resource: '../Classes/Controller/*'
+    tags: ['controller.service_arguments']
+
+  # Domain Services
+  Monosize\Adventcalendar\Domain\Repository\:
+    resource: '../Classes/Domain/Repository/*'
+
+  # Console Commands  
+  Monosize\Adventcalendar\Command\CalendarCommand:
+    tags:
+      - name: 'console.command'
+        command: 'adventcalendar:calendar'
+
+  Monosize\Adventcalendar\Command\ConvertCommand:
+    tags:
+      - name: 'console.command'
+        command: 'adventcalendar:convert'

@@ -1,0 +1,31 @@
+<html xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" flux:schemaLocation="https://fluidtypo3.org/schemas/flux-master.xsd" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+			v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
+
+<f:image image="{entity.companyImages -> v:iterator.first()}" class="ratio-1x1" loading="lazy"/>
+<div class="padding-vertical-small padding-horizontal-small">
+	<h3>{entity.companyTitle}</h3>
+	<p>
+		{entity.street}
+		<br>
+		{entity.zip} {entity.city}<br>
+	<f:if condition="{entity.phone} || {entity.fax}">
+		<f:if condition="{entity.phone}">
+			Telefon: {entity.phone}<br>
+		</f:if>
+		<f:if condition="{entity.fax}">
+			Telefax: {entity.fax}<br>
+		</f:if>
+	</f:if>
+	</p>
+	<f:if condition="{entity.email} || {entity.www}">
+		<p>
+			<f:if condition="{entity.email}">
+				<f:link.email email="{entity.email}">{entity.email}</f:link.email>
+			</f:if>
+			<f:if condition="{entity.www}">
+				<f:link.typolink parameter="{entity.www}">Homepage</f:link.typolink>
+			</f:if>
+		</p>
+	</f:if>
+</div>
+</html>

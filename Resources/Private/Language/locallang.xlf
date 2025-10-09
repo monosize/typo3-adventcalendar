@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-06-09T08:09:56Z">
+		<header>
+			<type>database</type>
+			<description>Language file for EXT:adventcalendar</description>
+		</header>
+		<body>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.prizes"><source>prizes</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor"><source><![CDATA[adventcalendar ==> LLL:tx_adventcalendar_domain_model_sponsor]]></source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.winning_prizes"><source>winning_prizes</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.calendar"><source>calendar</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.day"><source>day</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_sponsor.entity"><source>entity</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_prize"><source><![CDATA[adventcalendar ==> LLL:tx_adventcalendar_domain_model_prize]]></source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_prize.winning_number"><source>winning_number</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_prize.sponsor"><source>sponsor</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_prize.name"><source>name</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.sponsors"><source>sponsors</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor"><source><![CDATA[adventcalendar ==> LLL:tx_adventcalendar_domain_model_winningsponsor]]></source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor.winning_prizes"><source>winning_prizes</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor.calendar"><source>calendar</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor.day"><source>day</source></trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningsponsor.entity"><source>entity</source></trans-unit>
+			<trans-unit id="plugin.Calendar">
+				<source>Advent Calendar</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.logo">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.winning_prizes">
+				<source>winning_prizes</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.winning_number">
+				<source>Winning number</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.calendar">
+				<source>Calendar</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.day">
+				<source>Day</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.sponsor">
+				<source>Sponsor</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.year">
+				<source>Year</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar.name">
+				<source>Calender name</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize">
+				<source><![CDATA[Winning prize for Advent calendar]]></source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_winningprize.name">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_adventcalendar_domain_model_calendar">
+				<source><![CDATA[Advent calendar]]></source>
+			</trans-unit>
+			<trans-unit id="mode">
+				<source><![CDATA[Mode]]></source>
+			</trans-unit>
+			<trans-unit id="mode.calendarList">
+				<source><![CDATA[Show advent calendar with prizes]]></source>
+			</trans-unit>
+			<trans-unit id="mode.list">
+				<source><![CDATA[List prizes]]></source>
+			</trans-unit>
+			<trans-unit id="mode.sponsors">
+				<source><![CDATA[List sponsors]]></source>
+			</trans-unit>
+			<trans-unit id="mode.category">
+				<source><![CDATA[List addresses with category]]></source>
+			</trans-unit>
+			<trans-unit id="calendar">
+				<source><![CDATA[Advent calendar]]></source>
+			</trans-unit>
+			<trans-unit id="mainConfiguration">
+				<source><![CDATA[Configuration]]></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

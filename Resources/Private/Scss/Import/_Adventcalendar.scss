@@ -1,0 +1,137 @@
+/// @group adventcalendar
+$adventcalendar-font-size: rem-calc(20);
+
+.adventcalendar {
+  position: relative;
+
+  .foreground {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+
+    table {
+      table-layout: fixed;
+      width: 100%;
+      height: 100%;
+
+      &, tr, td, tbody {
+        background: transparent;
+        border: 0;
+      }
+
+    }
+  }
+
+  .day {
+    @include poly-fluid-sizing('padding-top', (map-get($breakpoints, medium): 15px, map-get($breakpoints, xlarge): 40px), false);
+    @include poly-fluid-sizing('padding-bottom', (map-get($breakpoints, medium): 15px, map-get($breakpoints, xlarge): 40px), false);
+    @include poly-fluid-sizing('padding-left', (map-get($breakpoints, medium): 5px, map-get($breakpoints, xlarge): 20px), false);
+    @include poly-fluid-sizing('padding-right', (map-get($breakpoints, medium): 5px, map-get($breakpoints, xlarge): 20px), false);
+
+    height: 25%;
+    overflow: hidden;
+    vertical-align: center;
+    text-align: center;
+
+    &.day6 {
+      height: 50%;
+    }
+
+    > .inline {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    a {
+
+      position: relative;
+      @include poly-fluid-sizing('border-radius', (map-get($breakpoints, medium): 5px, map-get($breakpoints, xlarge): 20px), false);
+
+      &:before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        content: '';
+        display: block;
+        border: 2px dashed rgba(project-palette(white), 0.5);
+        box-shadow: 1px 1px 2px rgba(project-palette(black), 0.5);
+        @include poly-fluid-sizing('border-radius', (map-get($breakpoints, medium): 5px, map-get($breakpoints, xlarge): 20px), false);
+        width: 100%;
+        height: 100%;
+      }
+
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: project-palette(white);
+      @include poly-fluid-sizing('font-size', (map-get($breakpoints, medium): 16px, map-get($breakpoints, xlarge): 40px), false);
+      font-weight: 500;
+      text-shadow: 0px 0px 4px rgba(project-palette(black), 0.6), 3px 3px 8px rgba(project-palette(white), 0.3);
+      text-decoration: none;
+
+      &:hover {
+        box-shadow: inset 0 0 40px project-palette(white);
+
+        &:before {
+          border: 2px solid rgba(project-palette(white), 1.0);
+        }
+      }
+
+      span {
+        display: block;
+      }
+    }
+
+    &.active {
+      a {
+        background: rgba(project-palette(greenlight), 0.7);
+      }
+    }
+
+    &.past {
+      a {
+        &:before {
+          border: 2px dashed rgba(project-palette(white), 1.0);
+        }
+      }
+      &:hover {
+        a {
+          &:before {
+            border: 2px solid rgba(project-palette(white), 1.0);
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .calendar-logo {
+    vertical-align: center;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    @include poly-fluid-sizing('padding-left', (map-get($breakpoints, medium): 5px, map-get($breakpoints, xlarge): 20px), false);
+    @include poly-fluid-sizing('padding-right', (map-get($breakpoints, medium): 5px, map-get($breakpoints, xlarge): 20px), false);
+
+    img {
+      width: 100%;
+    }
+  }
+
+}
+
+.adventcalendar-sponsors {
+  h3 {
+    @include poly-fluid-sizing('font-size', (map-get($breakpoints, medium): 16px, map-get($breakpoints, xlarge): 20px), false);
+    color: project-palette(black);
+    font-weight: $global-weight-bold;
+
+  }
+}

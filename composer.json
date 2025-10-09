@@ -1,0 +1,48 @@
+{
+  "name": "monosize/typo3-adventcalendar",
+  "type": "typo3-cms-extension",
+  "description": "TYPO3 13.4 compatible advent calendar extension",
+  "autoload": {
+    "psr-4": {
+      "Monosize\\Adventcalendar\\": "Classes/"
+    }
+  },
+  "keywords": [
+    "TYPO3 CMS",
+    "AdventCalendar",
+    "Calendar"
+  ],
+  "authors": [
+    {
+      "name": "Frank Rakow",
+      "email": "frank.rakow@gestalten.de"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "typo3/cms-core": "^13.4",
+    "typo3/cms-extbase": "^13.4",
+    "typo3/cms-fluid": "^13.4",
+    "typo3/cms-frontend": "^13.4",
+    "typo3/cms-backend": "^13.4",
+    "league/csv": "^9.0"
+  },
+  "replace": {
+    "adventcalendar": "self.version",
+    "typo3-ter/adventcalendar": "self.version"
+  },
+  "license": "GPL-2.0-or-later",
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin",
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "adventcalendar"
+    }
+  }
+}

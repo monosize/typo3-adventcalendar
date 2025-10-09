@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-06-12T16:04:10Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+			<trans-unit id="plugin.calendar" approved="yes">
+				<source><![CDATA[Advent Calendar]]></source>
+			</trans-unit>
+			<trans-unit id="folder-action" approved="yes">
+				<source><![CDATA[Folder News Actions]]></source>
+			</trans-unit>
+			<trans-unit id="folder-project" approved="yes">
+				<source><![CDATA[Folder News Projects]]></source>
+			</trans-unit>
+			<trans-unit id="folder-event" approved="yes">
+				<source><![CDATA[Folder News Envent]]></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

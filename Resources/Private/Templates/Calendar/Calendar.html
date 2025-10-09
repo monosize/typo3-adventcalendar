@@ -1,0 +1,138 @@
+<html xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" flux:schemaLocation="https://fluidtypo3.org/schemas/flux-master.xsd" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+			v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd" data-namespace-typo3-fluid="true">
+
+<f:variable name="imageSettings" value="{ratio: 'ratio-4x3', lazy: '1'}"/>
+<f:if condition="{day} == -1">
+	<f:then>
+		<h2 class="padding-vertical-large text-center">Wer will denn da mogeln?</h2>
+	</f:then>
+	<f:else>
+		<f:if condition="{day}">
+			<h2 class="padding-vertical-large text-center">Gewinne für den {day}. Dezember {calendar.year}</h2>
+		</f:if>
+	</f:else>
+</f:if>
+<div class="adventcalendar">
+	<div class="background">
+		<f:image image="{calendar.image -> v:iterator.first()}" class="ratio-4x3" loading="lazy"/>
+	</div>
+	<div class="foreground">
+		<table class="calendar">
+			<tbody>
+			<tr>
+				<td colspan="2" class="day calendar-logo">
+					<div class="inline">
+						<f:image image="{calendar.logo -> v:iterator.first()}" loading="lazy"/>
+					</div>
+				</td>
+				<f:render section="day" arguments="{day:11,now:now}"/>
+				<f:render section="day" arguments="{day:3,now:now}"/>
+				<f:render section="day" arguments="{day:22,now:now}"/>
+				<f:render section="day" arguments="{day:19,now:now}"/>
+				<f:render section="day" arguments="{day:18,now:now}"/>
+			</tr>
+			<tr>
+				<f:render section="day" arguments="{day:14,now:now}"/>
+				<f:render section="day" arguments="{day:21,now:now}"/>
+				<f:render section="day" arguments="{day:5,now:now}"/>
+				<f:render section="day" arguments="{day:15,now:now}"/>
+				<f:render section="day" arguments="{day:24,now:now,colspan:1}"/>
+				<f:render section="day" arguments="{day:12,now:now}"/>
+			</tr>
+			<tr>
+				<f:render section="day" arguments="{day:17,now:now}"/>
+				<f:render section="day" arguments="{day:6,now:now,rowspan:1}"/>
+				<f:render section="day" arguments="{day:1,now:now}"/>
+				<f:render section="day" arguments="{day:8,now:now}"/>
+				<f:render section="day" arguments="{day:10,now:now}"/>
+				<f:render section="day" arguments="{day:7,now:now}"/>
+				<f:render section="day" arguments="{day:2,now:now}"/>
+			</tr>
+			<tr>
+				<f:render section="day" arguments="{day:4,now:now}"/>
+				<f:render section="day" arguments="{day:23,now:now}"/>
+				<f:render section="day" arguments="{day:9,now:now}"/>
+				<f:render section="day" arguments="{day:20,now:now}"/>
+				<f:render section="day" arguments="{day:13,now:now}"/>
+				<f:render section="day" arguments="{day:16,now:now}"/>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<f:if condition="{day} == -1">
+	<f:else>
+		<f:if condition="{day}">
+			<f:render partial="List" arguments="{_all}"/>
+		</f:if>
+	</f:else>
+</f:if>
+
+<f:section name="day">
+	<td {f:if(condition:'{colspan}',then:'colspan=\'2\' ')} {f:if(condition:'{rowspan}',then:'rowspan=\'2\' ')} class="day {f:if(condition:'{now} == {day}',then:'active')} {f:if(condition:'{now} > {day}',then:'past')}">
+	<div class="inline">
+		<f:link.action action="calendar" arguments="{day:day}"><span>{day}</span></f:link.action>
+	</div>
+	</td>
+
+</f:section>
+<f:section name="test">
+	<table>
+		<thead>
+		<th>Gewinn-Nummer</th>
+		<th style="width: 66%">Gewinn</th>
+		<th style="width: 33%">Sponsor</th>
+		</thead>
+		<tbody>
+		<f:for each="{prizes}" as="prize">
+			<tr>
+			<td>{prize.winningNumber}</td>
+			<td>{prize.name}</td>
+				<td><a data-open="sponsor_{prize.sponsor.uid}">{prize.sponsor.entity.companyTitle}</a></td>
+			</tr>
+		</f:for>
+		</tbody>
+	</table>
+	<v:variable.set name="used" value="{0:0}"/>
+	<f:for each="{prizes}" as="prize">
+		<f:if condition="{value.n{prize.sponsor.uid}}">
+			<f:else>
+				<f:alias map="{entity: prize.sponsor.entity}">
+					<div class="reveal" id="sponsor_{prize.sponsor.uid}" data-reveal>
+						<h3>{entity.companyTitle}</h3>
+						<p>
+							{entity.street}
+							<br>
+							{entity.zip} {entity.city}
+						</p>
+						<f:if condition="{entity.phone} || {entity.fax}">
+							<p>
+								<f:if condition="{entity.phone}">
+									Telefon: {entity.phone}<br>
+								</f:if>
+								<f:if condition="{entity.fax}">
+									Telefax: {entity.fax}<br>
+								</f:if>
+							</p>
+						</f:if>
+						<f:if condition="{entity.email} || {entity.www}">
+							<p>
+								<f:if condition="{entity.email}">
+									<f:link.email email="{entity.email}">{entity.email}</f:link.email>
+								</f:if>
+								<f:if condition="{entity.www}">
+									<f:link.typolink parameter="{entity.www}">Homepage</f:link.typolink>
+								</f:if>
+							</p>
+						</f:if>
+					<button class="close-button" data-close aria-label="Close modal" type="button">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					</div>
+				</f:alias>
+				<v:variable.set name="used.n{prize.sponsor.uid}" value="1"/>
+			</f:else>
+		</f:if>
+	</f:for>
+</f:section>
+</html>
